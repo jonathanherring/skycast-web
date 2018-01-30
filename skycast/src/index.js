@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import darkSkyApi from './lib/dark_sky_api'
 import geoApi from './lib/geo_api'
 import SearchBar from "./components/search_bar"
+import FetchButton from "./components/fetch_button"
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
       }
       this.findCoordinates = this.findCoordinates.bind(this)
       this.findCoordinates("denver")
+      this.fetchWeather = this.fetchWeather.bind(this)
     }
     findCoordinates(term) {
       let result = geoApi.locate(term)
@@ -25,21 +27,28 @@ class App extends Component {
         this.setState({
           coordinates: location.results[0].geometry.location
         })
+        console.log(this.state.coordinates)
       })
     }
-    fetchWeather(lat,long) {
-        let result = darkSkyApi.forecast(lat,long)
+    fetchWeather() {
+        let lat = this.state.coordinates.lat
+        let lng = this.state.coordinates.lng
+        let result = darkSkyApi.forecast(lat,lng)
         result.then(weather => {
             this.setState({
                 weather: weather
             })
+            console.log(this.state.weather)
         })
     }
 
     render() {
-      const locationSearch = _.debounce((term) => {this.findCoordinates(term) }, 300)
+      const locationSearch = _.debounce((term) => {this.findCoordinates(term) }, 500)
       return (
+          <div>
         <SearchBar onSearchTermChange={locationSearch} />
+        <FetchButton onClick={this.fetchWeather} />
+        </div>
       )
     }
   }

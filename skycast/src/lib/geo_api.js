@@ -1,11 +1,11 @@
 const fetch = require('isomorphic-fetch')
 
-const API_KEY = "AIzaSyAKGlt50YAYICALNT2KncJNqT9scdVKN9o"
+
 const API_URL = `https://maps.googleapis.com/maps/api/geocode/json?address=`
 
 
 const locate = ( address ) => {
-    return fetch(API_URL + address + `&key=${API_KEY}`)
+    return fetch(API_URL + address + `&key=${process.env.GEO_API_KEY}`)
     .then(function(response) {
       return response.json()
     }).then(function(json) {
