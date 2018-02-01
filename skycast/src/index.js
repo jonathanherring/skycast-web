@@ -7,6 +7,7 @@ import darkSkyApi from './lib/dark_sky_api'
 import geoApi from './lib/geo_api'
 import SearchBar from "./components/search_bar"
 import FetchButton from "./components/fetch_button"
+import Current from "./components/current"
 
 
 class App extends Component {
@@ -18,7 +19,7 @@ class App extends Component {
         weather:{}
       }
       this.findCoordinates = this.findCoordinates.bind(this)
-      this.findCoordinates("denver")
+    //   this.findCoordinates("denver")
       this.fetchWeather = this.fetchWeather.bind(this)
     }
     findCoordinates(term) {
@@ -48,6 +49,7 @@ class App extends Component {
           <div>
         <SearchBar onSearchTermChange={locationSearch} />
         <FetchButton onClick={this.fetchWeather} />
+        <Current weather={this.state.weather} />
         </div>
       )
     }

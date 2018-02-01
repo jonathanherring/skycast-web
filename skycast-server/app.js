@@ -2,7 +2,6 @@ const express = require("express")
 const app = express()
 const bodyparser = require("body-parser")
 const cors = require("cors")
-const weatherProxy = require("./routes/weather_proxy.js")
 const request = require("request")
 require("dotenv").load()
 
