@@ -66,7 +66,7 @@ const Current = ({ weather }) => {
   const today = Moment.unix(weather.currently.time).format("dddd MMMM Do")
   const summary = weather.currently.summary
   const temperature = Math.round(weather.currently.temperature)
-  const feelsLike = weather.currently.apparentTemperature
+  const feelsLike = Math.round(weather.currently.apparentTemperature)
   const high = Math.round(weather.daily.data[0].temperatureHigh)
   const low = Math.round(weather.daily.data[0].temperatureLow)
   const windSpeed = weather.currently.windSpeed

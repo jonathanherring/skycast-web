@@ -8,6 +8,7 @@ import geoApi from './lib/geo_api'
 import SearchBar from "./components/search_bar"
 import FetchButton from "./components/fetch_button"
 import Current from "./components/current"
+import Forecast from "./components/forecast"
 
 
 class App extends Component {
@@ -50,11 +51,24 @@ class App extends Component {
         <SearchBar onSearchTermChange={locationSearch} />
         <FetchButton onClick={this.fetchWeather} />
         <Current weather={this.state.weather} />
+        <Forecast weather={this.state.weather} />
         </div>
       )
     }
   }
 
+
+
+
+
+
+
+
+
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
 
 
 
