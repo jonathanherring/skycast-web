@@ -17,7 +17,8 @@ class App extends Component {
   
       this.state = {
         coordinates: {},
-        weather:{}
+        weather:{},
+        history: {}
       }
       this.findCoordinates = this.findCoordinates.bind(this)
     //   this.findCoordinates("denver")
@@ -39,6 +40,17 @@ class App extends Component {
         result.then(weather => {
             this.setState({
                 weather: weather
+            })
+            console.log(this.state.weather)
+        })
+    }
+    fetchHistory() {
+        let lat = this.state.coordinates.lat
+        let lng = this.state.coordinates.lng
+        let result = darkSkyApi.history(lat,lng,time)
+        result.then(history => {
+            this.setState({
+                history: history
             })
             console.log(this.state.weather)
         })

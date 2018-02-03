@@ -13,4 +13,18 @@ const forecast = ( latitude, longitude ) => {
     })
   }
 
-module.exports = {forecast}
+  const history = ( latitude, longitude, time ) => {
+    return fetch(API_URL + `/history?lat=${latitude}&lng=${longitude}&time=${time}`)
+    .then(function(response) {
+      return response.json()
+    }).then(function(json) {
+      console.log('parsed json dark sky HISTORY', json)
+      return json
+    }).catch(function(ex) {
+      console.log('parsing failed', ex)
+    })
+  }
+
+
+
+module.exports = {forecast, history}

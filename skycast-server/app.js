@@ -24,6 +24,21 @@ app.get("/api", function(req, res, next) {
   })
 })
 
+app.get("/api/history", function(req, res, next) {
+    const API_URL = `https://api.darksky.net/forecast/${
+      process.env.DARK_SKY_API_KEY
+    }/${req.query.lat},${req.query.lng},${req.query.time}`
+    console.log(req.query)
+    request(API_URL, function(error, response, body) {
+      if (error) {
+        return next(error)
+      }
+      if (!error && response.statusCode === 200) {
+        res.send(body)
+      }
+    })
+  })
+
 app.use(function(req, res, next) {
   const err = new Error("Not Found")
   err.status = 404

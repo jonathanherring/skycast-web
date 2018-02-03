@@ -8,3 +8,11 @@ test('dark_sky_api:forecast', t => {
         t.truthy(forecasts.hourly.data.length > 0)
     })
 })
+
+test('dark_sky_api:history', t => {
+    return darkSkyApi.history(30.8267,-122.4233,1516953600)
+    .then(history => {
+        console.log('dark sky HISTORY test',history)
+        t.truthy(history.hourly.data.length > 0)
+    })
+})
