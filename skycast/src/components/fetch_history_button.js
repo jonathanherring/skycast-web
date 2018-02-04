@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-class FetchButton extends Component {
+class FetchHistoryButton extends Component {
   constructor(props) {
     super(props)
 
@@ -9,10 +9,10 @@ class FetchButton extends Component {
     return (
         <div className="button">
           <button onClick={this.props.onClick}
-          >Show me the weather</button>
+          >Get Weather History</button>
         </div>
     )
   }
 }
 
-export default FetchButton
+export default FetchHistoryButton

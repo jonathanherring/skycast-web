@@ -2,62 +2,6 @@ import React, { Component } from "react"
 import Moment from "moment"
 import Skycons from "react-skycons"
 
-// class Current extends Component {
-
-//     constructor(props) {
-//         super(props);
-
-//         this.state = {
-//             weather: {},
-//             weatherHourly: [],
-//             today: '',
-//             summary: '',
-//             sunrise: '',
-//             sunset: '',
-//             temperature: '',
-//             feelsLike: '',
-//             high: '',
-//             low: '',
-//             humidity: '',
-//             windSpeed: '',
-//             icon: 'CLEAR_DAY'
-//         }
-//     }
-
-//     setWeatherData(weather) {
-//         this.setState({
-//             weather: weather,
-//             weatherHourly: weather.hourly,
-//             today: Moment.unix(weather.currently).format('dddd MMMM Do'),
-//             summary: weather.currently.summary,
-//             tempurature: weather.currently.temperature,
-//             feelsLike: weather.currently.apparentTemperature,
-//             high: weather.daily.data[0].temperatureHigh,
-//             low: weather.daily.data[0].temperatureLow,
-//             windSpeed: weather.currently.windSpeed,
-//             icon: weather.currently.icon
-
-//         })
-//     }
-//     render(){
-
-//         return(
-//         <section>
-//             <div>
-//                 <Skycons icon={this.state.icon.toUpperCase().replace(/-/g, "_")} autoplay={true}/>
-//                 <h2>{this.state.temperature}</h2>
-//                 <h3></h3>
-//                 <h4></h4>
-//             </div>
-//             <ul>
-//                 <li></li>
-//                 <li></li>
-//             </ul>
-//         </section>
-//         )
-//     }
-// }
-
 const Current = ({ weather }) => {
   if (!weather || !weather.currently) {
     return <section />
