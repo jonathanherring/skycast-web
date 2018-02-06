@@ -1,5 +1,5 @@
 # SkyCast
-!(https://github.com/jonathanherring/skycast-web/blob/master/skycast/SkyCast.gif)[]
+![](https://github.com/jonathanherring/skycast-web/blob/master/skycast/SkyCast.gif)
 ## Technologies
 
 * HTML
