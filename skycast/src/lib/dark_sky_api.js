@@ -1,6 +1,6 @@
 const fetch = require('isomorphic-fetch')
 
-const API_URL = 'http://localhost:3001/api'
+const API_URL = 'https://skycast-proxy.herokuapp.com/api'
 const forecast = ( latitude, longitude ) => {
     return fetch(API_URL + `?lat=${latitude}&lng=${longitude}`)
     .then(function(response) {

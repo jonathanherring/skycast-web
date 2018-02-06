@@ -10,6 +10,7 @@
     "react": "^16.2.0",
     "react-datepicker": "^1.1.0",
     "react-dom": "^16.2.0",
+    "react-dropdown": "^1.3.6",
     "react-scripts": "1.1.0",
     "react-skycons": "^0.7.0",
     "recharts": "^1.0.0-beta.10"

@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import Moment from "moment"
 import Skycons from "react-skycons"
 
@@ -15,12 +15,18 @@ const Current = ({ weather }) => {
   const low = Math.round(weather.daily.data[0].temperatureLow)
   const windSpeed = weather.currently.windSpeed
   const icon = weather.currently.icon
-  const humidity = weather.currently.humidity
+  const humidity = weather.currently.humidity*100
 
   return (
     <section className="col-12 col-md-5 mb-2 ml-auto">
-      <div className="card border-info text-info bg-transparent" >
-        <Skycons className="w-75"icon={icon.toUpperCase().replace(/-/g, "_")} autoplay={true} />
+    <div className="card text-info rounded">
+      <div className="card border-info text-info bg-transparent text-center rounded" >
+      <div className="card-header bg-info border-info text-center">
+                    <h4 className="text-white">Current</h4>
+                </div>
+      <div className="text-center">
+        <Skycons className="w-75" color="#00a4bc" icon={icon.toUpperCase().replace(/-/g, "_")} autoplay={true} />
+        </div>
         <h2 className="display-2 temp">{temperature}&deg;F</h2>
         <h3> {summary} </h3>
         <h4> {today} </h4>
@@ -31,6 +37,7 @@ const Current = ({ weather }) => {
         <li className="list-group-item justify-content-between bg-transparent d-flex "><span>Humidity: </span><span>{humidity} %</span></li>
         <li className="list-group-item justify-content-between bg-transparent d-flex "><span>Wind Speed: </span><span>{windSpeed} mp/h</span></li>
       </ul>
+      </div>
     </section>
   )
 }

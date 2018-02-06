@@ -8,7 +8,7 @@ class FetchHistoryButton extends Component {
   render() {
     return (
         <div className="button">
-          <button onClick={this.props.onClick}
+          <button className="btn btn-info mt-2"onClick={this.props.onClick}
           >Get Weather History</button>
         </div>
     )

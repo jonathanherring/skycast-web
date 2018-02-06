@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Moment from 'moment'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
@@ -21,11 +21,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
 
     return (
       <div>
-        <h3>Past</h3>
         <div>
           <div>
             <LineChart
-              width={1000}
+              width={700}
               height={200}
               data={data}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}

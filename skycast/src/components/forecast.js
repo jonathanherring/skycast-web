@@ -7,22 +7,23 @@ import ForecastDays from './forecast_days'
     if (!weather || !weather.currently) {
         return <section />
       } 
-    const days = weather.daily.data.map((day) => {
-        return (
+    const futureDays = weather.daily.data  
+    const days = [] 
+    for(var i = 1; i < futureDays.length; i++) {
+        days[i] =
             <ForecastDays 
-            icon={day.icon}
-            day={Moment.unix(day.time).format('dddd MMMM Do')}
-            dayHigh={Math.round(day.temperatureHigh)}
-            dayLow ={Math.round(day.temperatureLow)}
-            key ={day.time}
+            icon={futureDays[i].icon}
+            day={Moment.unix(futureDays[i].time).format('dddd MMMM Do')}
+            dayHigh={Math.round(futureDays[i].temperatureHigh)}
+            dayLow ={Math.round(futureDays[i].temperatureLow)}
+            key ={futureDays[i].time}
             />
-        )
-    })
+    }
     return (
         <section className="col-12 col-md-5 mb-2 mr-auto">
             <div className="card bg-transparent text-info border-info">
                 <div className="card-header bg-info border-info text-center">
-                    <h4></h4>
+                    <h5 className="text-white">7-Day Forecast</h5>
                 </div>
                 <ul className="container list-group list-group-flush ">
                     {days}
