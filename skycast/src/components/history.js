@@ -34,9 +34,9 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
     organizeWind()
 
     return (
-      <div>
-        <div>
-          <div>
+      <div className="d-flex align-items-center flex-column">
+        <div className="p-2">
+          <div >
             <LineChart
               width={800}
               height={200}
@@ -53,8 +53,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
           </div>
         </div>
 
-        <div>
-          <div>
+        <div className="p-2">
+          <div >
             <LineChart
               width={800}
               height={200}

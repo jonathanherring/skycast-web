@@ -15,7 +15,7 @@ const Current = ({ weather }) => {
   const low = Math.round(weather.daily.data[0].temperatureLow)
   const windSpeed = weather.currently.windSpeed
   const icon = weather.currently.icon
-  const humidity = weather.currently.humidity*100
+  const humidity = Math.round(weather.currently.humidity*100)
 
   return (
     <section className="col-12 col-md-5 mb-2 ml-auto">
